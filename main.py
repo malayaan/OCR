@@ -3,12 +3,12 @@ from paddleocr import PaddleOCR, draw_ocr
 from PIL import Image
 
 # --- Configuration ---
-image_path = r"data\cadre-1.png"
-output_dir = "output"
+image_path = os.path.join("data", "cadre-1.png")
+output_dir = os.path.expanduser("~/OCR/output")
 os.makedirs(output_dir, exist_ok=True)
 
-# --- Dossier local des modèles (modifie le chemin selon ton user si besoin) ---
-model_root = r".paddleocr"
+# --- Dossier local des modèles ---
+model_root = os.path.expanduser("~/OCR/.paddleocr")
 
 det_model_dir = os.path.join(model_root, "detection", "ch_PP-OCRv3_det_infer")
 rec_model_dir = os.path.join(model_root, "recognition", "multilingual_PP-OCRv3_rec_infer")
@@ -48,7 +48,10 @@ boxes = [line[0] for region in result for line in region]
 txts = [line[1][0] for region in result for line in region]
 scores = [line[1][1] for region in result for line in region]
 
-im_show = draw_ocr(image, boxes, txts, scores, font_path="C:\\Windows\\Fonts\\arial.ttf")
+# Utilise une police Linux existante
+font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+
+im_show = draw_ocr(image, boxes, txts, scores, font_path=font_path)
 annotated_path = os.path.join(output_dir, "cadre-1_annotated.jpg")
 im_show = Image.fromarray(im_show)
 im_show.save(annotated_path)
