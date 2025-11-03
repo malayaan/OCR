@@ -3,6 +3,7 @@ env-ocr/
 env-ocr-linux/
 .env/
 venv/
+wheels_gpu/
 
 # Dossiers de sortie
 output/
