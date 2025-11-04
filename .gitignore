@@ -4,7 +4,7 @@ env-ocr-linux/
 .env/
 venv/
 wheels_gpu/
-
+paddle/
 # Dossiers de sortie
 output/
 __pycache__/
