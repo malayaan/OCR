@@ -20,5 +20,4 @@ __pycache__/
 # Archives (on garde seulement les versions LFS)
 *.zip
 *.7z
-paddle.7z
 !env-ocr-linux.zip
