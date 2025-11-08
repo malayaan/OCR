@@ -21,7 +21,6 @@ ocr = PaddleOCR(
     det_model_dir=det_model_dir,
     rec_model_dir=rec_model_dir,
     cls_model_dir=cls_model_dir,
-    use_gpu=False  # Utilisation du GPU
 )
 
 # --- Lecture et OCR ---
