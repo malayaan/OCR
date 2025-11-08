@@ -1,2 +1,1 @@
-export PIP_NO_INDEX=1
-pip install --no-index --find-links path/paddlevision_export/pip_pkgs -r path/paddlevision_export/requirements_clean.txt
+Remove-Item Env:\PIP_NO_INDEX -ErrorAction SilentlyContinue
