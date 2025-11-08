@@ -1,1 +1,1 @@
-Remove-Item Env:\PIP_NO_INDEX -ErrorAction SilentlyContinue
+python -c "from paddleocr import PaddleOCR; print('✅ PaddleOCR importé')"
